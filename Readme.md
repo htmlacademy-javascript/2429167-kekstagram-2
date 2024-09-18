@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Дмитрий Абшилава](https://up.htmlacademy.ru/javascript-individual/2/user/2429167).
-* Наставник: `Неизвестно`.
+* Наставник: `Ярослав Шевцов`(https://htmlacademy.ru/profile/id170516).
 
 ---
 
