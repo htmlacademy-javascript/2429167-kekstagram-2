@@ -9,3 +9,7 @@ const isPalindrome = (string) => {
   const reversedString = normalizedString.split('').reverse().join('');
   return normalizedString === reversedString;
 };
+
+checkStrokeLength('Комментарий', 15);
+
+isPalindrome('Топот');
