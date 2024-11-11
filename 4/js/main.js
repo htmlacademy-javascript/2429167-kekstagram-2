@@ -1,9 +1,6 @@
-const getRandomInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(a, b));
-  const upper = Math.floor(Math.max(a, b));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-};
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
@@ -22,6 +19,10 @@ function createRandomIdFromRangeGenerator (min, max) {
     return currentValue;
   };
 }
+
+const randomId = createRandomIdFromRangeGenerator(1, 25);
+
+const randomCommentId = createRandomIdFromRangeGenerator(26, 800);
 
 const descriptionText = [
   'Сегодня приехали на пляж. Нам очень понравилось!',
@@ -45,13 +46,13 @@ const names = ['Артём', 'Ярослав', 'Елена', 'Вероника',
 
 const POSTS_COUNT = 25;
 
-const createPost = () => ({
-  id: createRandomIdFromRangeGenerator(1, 25),
+const createPost = (num) => ({
+  id: randomId(num),
   url: `photos/${getRandomInteger(1, 25)}.jpg`,
   description: getRandomArrayElement(descriptionText),
   likes: getRandomInteger(15, 200),
   comments: Array.from({ length: getRandomInteger(0, 30) }, () => ({
-    id: createRandomIdFromRangeGenerator(26, 800),
+    id: randomCommentId(),
     avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
     message: Array.from({ length: getRandomInteger(1, 2) }, () => (
       getRandomArrayElement(messageText)
@@ -60,6 +61,6 @@ const createPost = () => ({
   })),
 });
 
-const postGenerator = Array.from({length: POSTS_COUNT}, createPost);
+const postGenerator = Array.from({length: POSTS_COUNT}, (_, num) => createPost(num));
 
-postGenerator();
+postGenerator;
