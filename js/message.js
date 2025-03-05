@@ -29,7 +29,7 @@ export const showMessage = (tpl) => {
   document.body.appendChild(messageClone);
   document.addEventListener('keydown', (evt) => removeMessageEsc(evt, messageClone));
 
-  messageButton.addEventListener('click', (event) => {
+  messageClone.addEventListener('click', (event) => {
     if (event.target === messageButton || event.target === messageClone) {
       removeMessage(messageClone);
     }

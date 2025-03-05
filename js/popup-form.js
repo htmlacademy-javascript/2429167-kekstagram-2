@@ -1,4 +1,4 @@
-import { onEffectChange } from './effects-slider';
+import { defaultEffects, onEffectChange } from './effects-slider';
 import { isEscapeKey } from './util';
 import { resetForm } from './validation';
 
@@ -38,6 +38,7 @@ function closePhotoEditor () {
   document.removeEventListener('keydown', onDocumentKeydown);
   photoEditorResetBtn.removeEventListener('click', onPhotoEditorBtnClick);
   resetForm();
+  defaultEffects();
 }
 
 function onFileInputChange() {

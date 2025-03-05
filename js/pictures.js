@@ -4,9 +4,13 @@ const randomUserPictureTemplate = document.querySelector('#picture')
 
 const picturesList = document.querySelector('.pictures');
 
+const clearPhoto = () => {
+  picturesList.querySelectorAll('a.picture').forEach((item) => item.remove());
+};
+
 const renderPictures = (data) => {
   const randomUserPictureFragment = document.createDocumentFragment();
-
+  clearPhoto();
   data.forEach(({url, description, likes, comments, id}) => {
     const pictureElement = randomUserPictureTemplate.cloneNode(true);
     pictureElement.dataset.id = id;
