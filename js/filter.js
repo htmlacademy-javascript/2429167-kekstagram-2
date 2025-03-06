@@ -3,6 +3,7 @@ import { renderBigPhoto } from './popup';
 import { debounce } from './util';
 
 const ACTIVE_BUTTON_CLASS = 'img-filters__button--active';
+const MAX_PICTURE_COUNT = 10;
 
 const FILTER = {
   default: 'filter-default',
@@ -14,8 +15,6 @@ const SORT_FUNC = {
   getRandom: () => 0.5 - Math.random(),
   getDiscussed: (a, b) => b.comments.length - a.comments.length,
 };
-
-const MAX_PICTURE_COUNT = 10;
 
 let currentFilter = FILTER.default;
 let pictures = [];
