@@ -41,8 +41,8 @@ function closeUserModal () {
 }
 
 export const renderBigPhoto = (data) => {
-  const userModalOpenElement = document.querySelectorAll('.picture');
-  userModalOpenElement.forEach((item) => item.addEventListener('click', (evt) => openUserModal(evt, data)));
+  const userModalOpenElements = document.querySelectorAll('.picture');
+  userModalOpenElements.forEach((item) => item.addEventListener('click', (evt) => openUserModal(evt, data)));
 };
 
 userModalCloseElement.addEventListener('click', () => {

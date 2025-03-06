@@ -2,10 +2,11 @@ import { defaultEffects, onEffectChange } from './effects-slider';
 import { isEscapeKey } from './util';
 import { resetForm } from './validation';
 
-let photoScale = 1;
 const SCALE_STEP = 0.25;
 
 const FILE_TYPES = ['jpg', 'jpeg', 'png'];
+
+let photoScale = 1;
 
 const uploadFileControl = document.querySelector('.img-upload__start');
 const pageBody = document.querySelector('body');
